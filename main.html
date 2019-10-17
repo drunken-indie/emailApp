@@ -9,36 +9,33 @@
 </head>
 <body>
     <div class="head row border border-left-0 border-right-0 border-top-0">
-    	<div class="col-1 px-5">i</div>
+    	<div class="col-1 px-5"></div>
     	<div class="col-3"><p>Email</p></div>
-    	<div class="col-4">6</div>
-    	<div class="col-2" id="username">User</div>
+    	<div class="col-4"></div>
+    	<div class="col-2" id="username">Mike</div>
     </div>
     <div class="row py-4 px-5">
-    	<div class="col-4">
-    		<div class="row py-1">
-    			<div class="col-10"><a href="javascript:void(0)" id="inbox" onclick="getMails(id)">INBOX</a></div>
-    			<div class="col-2">num</div>
-    		</div>
-    		<div class="row py-1">
-    			<div class="col-10"><a href="javascript:void(0)" id="important" onclick="getMails(id)">IMPORTANT</a></div>
-    			<div class="col-2">num</div>
-    		</div>
-    		<div class="row py-1">
-    			<div class="col-10"><a href="javascript:void(0)" id="outbox" onclick="getMails(id)">OUTBOX</a></div>
-    			<div class="col-2">num</div>
-    		</div>
-    		<div class="row py-1">
-    			<div class="col-10"><a href="javascript:void(0)" id="spam" onclick="getMails(id)">SPAM</a></div>
-    			<div class="col-2">num</div>
-    		</div>
-    		<div class="row py-1">
-    			<div class="col-10"><a href="javascript:void(0)" id="junk" onclick="getMails(id)">JUNK</a></div>
-    			<div class="col-2">num</div>
-    		</div>
+    	<div class="col-4 border border-top-0 border-left-0 border-bottom-0">
+    		<nav>
+        		<ul>
+            		<li><a href="javascript:void(0)" id="inbox" onclick="getMails(id)" class="active mb-3" >INBOX</a></li>
+            		<li><a href="javascript:void(0)" id="important" onclick="getMails(id)" class="mb-3" >IMPORTANT</a></li>
+            		<li><a href="javascript:void(0)" id="outbox" onclick="getMails(id)" class="mb-3" >OUTBOX</a></li>
+            		<li><a href="javascript:void(0)" id="spam" onclick="getMails(id)" class="mb-3" >SPAM</a></li>
+            		<li><a href="javascript:void(0)" id="junk" onclick="getMails(id)" class="mb-3" >JUNK</a></li>
+          		</ul>
+      		</nav>
     	</div>
     	<div class="col-8 px-5">
-    		<table id="emailDisplayTable">
+    		<div class="row py-1">
+    			<div class="col-8"><h2 class="currentDir" id="currentDir">INBOX EMAILS</h2></div>
+    			<div class="col-4">
+    				<select id="dropdownMenu">	
+    				</select>
+    				<button onclick="moveEmail()">Submit</button>
+    			</div>
+    		</div>
+    		<table id="emailDisplayTable" class="mytable">
     			
     		</table>
     	</div>

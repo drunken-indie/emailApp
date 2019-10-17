@@ -15,3 +15,80 @@
 	padding-top: 5px;
 	font-size: 50px;
 }
+/*table customization*/
+table.mytable {
+  border: 2px solid #FFFFFF;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.mytable td, table.mytable th {
+  border: 3px solid #FFFFFF;
+  padding: 3px 4px;
+}
+table.mytable tbody td {
+  font-size: 13px;
+}
+table.mytable td:nth-child(even) {
+  background: #EBEBEB;
+}
+table.mytable thead {
+  background: #FFFFFF;
+  border-bottom: 4px solid #333333;
+}
+table.mytable thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+  border-left: 4px solid #333333;
+}
+table.mytable thead th:first-child {
+  border-left: none;
+}
+
+table.mytable tfoot td {
+  font-size: 14px;
+}
+
+/*nav unordered list customization*/
+nav ul { 
+    list-style: none; padding: 5px 20px; width: auto; position: relative; 
+    left: -9px;
+}
+nav ul li { display: inline; }
+nav ul li a {
+  display: block;
+  float: left;
+  border-top: 1px solid #96d1f8;
+  background: #3e779d;
+  background: white;
+  height: 46px;
+  width: 150px;
+  padding: 0 10px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 3px;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  -webkit-text-stroke: 1px transparent;
+  font: bold 20px/26px "Lucida Grande", "Verdana", sans-serif;
+  color: black;
+  text-decoration: none; 
+  margin: 0 15px 0 0;
+  text-align: center;
+}
+nav ul li a:hover {
+  border-top: 1px solid #4789b4;
+  background: #28597a;
+  background: -moz-linear-gradient(top,  #3d789f,  #28597a);
+  color: rgba(255,255,255,.85); 
+} 
+/*active */
+nav ul li a:active, nav ul li a.current {
+  border-top-color: #245779 !important;
+  background: grey !important;
+  position: relative;
+  top: 1px; 
+}

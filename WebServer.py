@@ -113,8 +113,35 @@ logger.setLevel(logging.INFO)
 logger.addHandler(logging.StreamHandler())
 
 
-def makeTable(data):
-   
+def prettyPrint(emailData):
+    for i in emailData:
+        print(i.get("name"))
+        for key in i.keys():
+            if (key!="name"):
+                print("\t"+key+"\t "+str(len(i.get(key))))
+                print("\t\t"+str(i.get(key)))
+            
+            
+def updateIt(recvData):
+    dataToSend=""
+    splitted = recvData.split(" ")
+    #print(splitted[0])
+    #print(splitted[1])
+    #print(splitted[2])
+    if (splitted[0]=="GET"):
+        #print("getget")
+        dataToSend=makeTable(splitted[1],splitted[2])
+        return (dataToSend)
+    elif (splitted[0]=="POST"):
+        #print("postpost")
+        dataToSend=updateDB(splitted[1], splitted[2], splitted[3], splitted[4:-1])
+        return dataToSend
+    else:
+        raise Exception('something wrong')
+    
+def makeTable(user, fromWhere):
+    found=False
+    userData={}
     #begin_row
     br="<tr>"
     #end row
@@ -124,11 +151,31 @@ def makeTable(data):
     #end table data
     etd="</td>"
     table_text=''
-    table_text+="<thead><tr><th>name</th><th>price</th><th>rating</th><th>reviews</th><th>brand</th></tr></thead><tbody>"
+    table_text+="<thead><tr><th></th><th>from</th><th>content</th></tr></thead><tbody>"
     #print(type(data))
     #print(str(data))
+    print(user)
+    for i in emailData:
+        if (i.get("name")==user):
+            found=True
+            print("user found!!")
+            userData=i.get(fromWhere)
+    if (not found):
+        raise Exception("user not found")
+    emailCount=0;
+    for email in userData:
+        table_text+=(br+btd+"<input type=\"checkbox\" id=\"checkbox"+str(emailCount)+"\"/>    &nbsp;"+etd+btd+str(email.get("sender"))+etd+btd+str(email.get("content"))+etd+er);
+        emailCount+=1
     table_text+="</tbody>"
     return (table_text)
+
+def updateDB(user, destination, currentInbox, indexes):
+    for i in emailData:
+        if (i.get("name"==user)):
+            for j in range(len(indexes)):
+                print((indexes[j]))
+    #for i in 
+    return(makeTable(user, currentInbox))
 
 
 
@@ -144,7 +191,7 @@ async def hello(websocket, path):
         #할필요 없어 테이블은
         #return_data=json.dumps(return_data)
     #no switch statement;;;;
-    return_data=input_string+"!!!"
+    return_data=updateIt(input_string)
     await websocket.send(return_data)
     #그다음에 테이블 만들면 되겠다
     #print(f"> {return_data}")
