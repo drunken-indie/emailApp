@@ -11,6 +11,102 @@ import json
 from multiprocessing import Process, Manager, Value
 from threading import Thread
 
+#fake data with 
+#emailData=
+#[{"name":"username","inbox":[{"read":@@@,"sender":@@@,"content":@@@@}],"important":@@@@@,"outbox":@@@,"spam":@@@@}]
+emailData=[{
+    "name":"Mike",
+    "inbox":[{
+        "read":1,
+        "sender":"Jen",
+        "content":"hello from Jen"
+           },
+        {
+        "read":0,
+        "sender":"Ken",
+        "content":"Bye from Ken"
+           }],
+    "important":[{
+        "read":1,
+        "sender":"ABC",
+        "content":"Your application"
+           }],
+    #ㅇ얘는 read 없다 민식아
+    "outbox":[{
+        "to":"Jim",
+        "content":"Re: Your application"
+           }],
+    "spam":[{
+        "read":1,
+        "sender":"some company",
+        "content":"deposit money to get your parcel back"
+           }],
+    "junk":[{
+        "read":1,
+        "sender":"Jen",
+        "content":"Install this package"
+           },
+        {
+        "read":0,
+        "sender":"Sue",
+        "content":"Casino safjosf"
+           }]
+    },
+           {
+    "name":"Jim",
+    "inbox":[{
+        "read":1,
+        "sender":"Mike",
+        "content":"Re: Your application"
+           },
+        {
+        "read":0,
+        "sender":"Ken",
+        "content":"Bye from Ken"
+           }],
+    "important":[{
+        "read":1,
+        "sender":"CDE",
+        "content":"Your application"
+           }],
+    #ㅇ얘는 read 없다 민식아
+    "outbox":[{
+        "to":"Sam",
+        "content":"Hello from Jim"
+           }],
+    "spam":[{
+        "read":1,
+        "sender":"some company",
+        "content":"deposit money to get your parcel back"
+           }],
+    "junk":[{
+        "read":1,
+        "sender":"Jen",
+        "content":"Install this package"
+           },
+        {
+        "read":0,
+        "sender":"Sue",
+        "content":"Casino safjosf"
+           }]
+    },
+           {
+    "name":"Sam",
+    "inbox":[{
+        "read":0,
+        "sender":"Jim",
+        "content":"Hello from Jim"
+           }],
+    "important":[],
+    #ㅇ얘는 read 없다 민식아
+    "outbox":[],
+    "spam":[],
+    "junk":[{
+        "read":0,
+        "sender":"Sue",
+        "content":"Casino safjosf"
+           }]
+    }]
 
 logger = logging.getLogger('websockets')
 logger.setLevel(logging.INFO)

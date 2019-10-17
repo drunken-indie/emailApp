@@ -1,7 +1,10 @@
+
 function getMails(id){
+	var username;
 	if (id=="inbox"){
 		document.getElementById('emailDisplayTable').innerHTML = "INBOX EMAILS";
-		practice();
+		username = document.getElementById('username').innerHTML;
+		practice(username);
 	}
 	else if (id=="important"){
 		document.getElementById('emailDisplayTable').innerHTML = "IMPORTANT EMAILS";
@@ -22,7 +25,7 @@ function getMails(id){
 }
 
 //0 - search
-function practice(){
+function practice(username){
 	//search_from 0 = Amazon, 1 = Ebay, 2 = Walmart
 	var search_key;
 	var search_from;
@@ -32,7 +35,7 @@ function practice(){
 
 	
 
-	string_to_send="aaa";
+	string_to_send="aaasda"+username;
 	/*
 	var text = search_key+","+search_from;
 	var bad = "EVAL" + JSON.stringify(text)+" 0\r\n";
