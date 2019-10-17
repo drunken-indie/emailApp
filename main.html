@@ -5,10 +5,44 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
-    <p>haha</p>
-    <div class="space-100"></div>
-    <p>hehe</p>
+    <div class="head row border border-left-0 border-right-0 border-top-0">
+    	<div class="col-1 px-5">i</div>
+    	<div class="col-3"><p>Email</p></div>
+    	<div class="col-4">6</div>
+    	<div class="col-2">User</div>
+    </div>
+    <div class="row py-4 px-5">
+    	<div class="col-4">
+    		<div class="row py-1">
+    			<div class="col-10"><a href="javascript:void(0)" id="inbox" onclick="getMails(id)">INBOX</a></div>
+    			<div class="col-2">num</div>
+    		</div>
+    		<div class="row py-1">
+    			<div class="col-10"><a href="javascript:void(0)" id="important" onclick="getMails(id)">IMPORTANT</a></div>
+    			<div class="col-2">num</div>
+    		</div>
+    		<div class="row py-1">
+    			<div class="col-10"><a href="javascript:void(0)" id="outbox" onclick="getMails(id)">OUTBOX</a></div>
+    			<div class="col-2">num</div>
+    		</div>
+    		<div class="row py-1">
+    			<div class="col-10"><a href="javascript:void(0)" id="spam" onclick="getMails(id)">SPAM</a></div>
+    			<div class="col-2">num</div>
+    		</div>
+    		<div class="row py-1">
+    			<div class="col-10"><a href="javascript:void(0)" id="junk" onclick="getMails(id)">JUNK</a></div>
+    			<div class="col-2">num</div>
+    		</div>
+    	</div>
+    	<div class="col-8 px-5">
+    		<table id="emailDisplayTable">
+    			
+    		</table>
+    	</div>
+    </div>
+
 </body>
 </html>

@@ -1,6 +1,6 @@
 .space-50
 {
-    height: 50;
+    height: 50px;
 }
 .space-100
 {
@@ -9,4 +9,9 @@
 .space-200
 {
     height: 200px;
+}
+.head
+{
+	padding-top: 5px;
+	font-size: 50px;
 }
